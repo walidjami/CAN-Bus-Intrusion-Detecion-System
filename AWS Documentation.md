@@ -5,7 +5,7 @@
 ### Generate Credentials for a User in IAM:  
 IAM > Users > select the user > Security credentials > Click "Create access key"  
 
-Download these credentials for later use.
+Download these credentials to use later.
 
 
 ### Install AWS CLI:  
