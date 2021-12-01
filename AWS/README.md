@@ -171,10 +171,18 @@ Click "Create queue"
 
 
 ## EC2:
-Use Docker (?)
+### EC2 - Create Server Instance
 
-Update server and install required software/packages
 
+### EC2 - Install required packages:
+sudo apt install python3-pip
+
+pip3 install boto3
+
+pip3 install -U scikit-learn scipy matplotlib
+
+
+### EC2 - ???
 Configure AWS user
  - "aws configure" command
 
