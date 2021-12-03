@@ -61,14 +61,14 @@ Tags > Review > "Create user"
 
 
 
-### <ins> IAM - User Roles and Policies:
+### <ins>IAM - User Roles and Policies:
 - rpi.user needs S3 access *only*  
 - ec2.user needs S3 and SQS access  
 
 ---
 
 ## S3:
-### <ins> S3 - Create Locally Aggregated Models Bucket
+### <ins>S3 - Create Locally Aggregated Models Bucket
 S3 > Create bucket  
 Bucket name:  
 ```
@@ -85,7 +85,7 @@ Block Public Access settings for this bucket:
 
 Click "Create bucket".
 
-### <ins> S3 - Create Federally Aggregated Models Bucket
+### <ins>S3 - Create Federally Aggregated Models Bucket
 S3 > Create bucket  
 Bucket name:  
 ```
@@ -102,7 +102,7 @@ Block Public Access settings for this bucket:
 
 Click "Create bucket".
 
-### <ins> S3 - Create "Event Notification"
+### <ins>S3 - Create "Event Notification"
 Create an "Event Notification" to send to a queue in SQS ***after*** the queue has been created (See the SQS section)
 
 S3 > can-bus-locally-aggregated-models > Properties  
@@ -134,7 +134,7 @@ can-bus-models-to-process
 ---
 
 ## SQS:
-### <ins> SQS - Create Queue for Locally Aggregated Models
+### <ins>SQS - Create Queue for Locally Aggregated Models
 SQS > Create queue  
 - [x] Standard  
 
@@ -171,12 +171,12 @@ Click "Create queue"
 
 
 ## EC2:
-### EC2 - Create Server Instance
+### <ins>EC2 - Create Server Instance:
 Create a new "free tier" EC2 instance that is running Ubuntu.
 
 Select the instance  you want to connect to and follow the "SSH" commands provided by Amazon.
 
-### EC2 - Install Required Software:
+### <ins>EC2 - Install Required Software:
 
 sudo apt-get update
 
@@ -189,7 +189,7 @@ pip3 install boto3
 pip3 install -U scikit-learn scipy matplotlib
 
 
-### EC2 - Setup IAM User Config
+### <ins>EC2 - Setup IAM User Config:
 Run this command to setup the IAM user configuration:
 ```
 aws configure
@@ -204,7 +204,7 @@ Default output format [None]: <ENTER>
 ```
 (Use the access_key and secret_key from `ec2.user` that was downloaded in the IAM section)
 
-### EC2 - Setup and Run Online Training
+### <ins>EC2 - Setup and Run Online Training:
 Copy the `ec2-model-processing.py` file into the EC2 server.  
 
 Run:  
