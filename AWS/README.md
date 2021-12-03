@@ -172,9 +172,16 @@ Click "Create queue"
 
 ## EC2:
 ### EC2 - Create Server Instance
+Create a new "free tier" EC2 instance that is running Ubuntu.
 
+Select the instance  you want to connect to and follow the "SSH" commands provided by Amazon.
 
-### EC2 - Install required packages:
+### EC2 - Install Required Software:
+
+sudo apt-get update
+
+sudo apt-get install awscli
+
 sudo apt install python3-pip
 
 pip3 install boto3
@@ -182,8 +189,26 @@ pip3 install boto3
 pip3 install -U scikit-learn scipy matplotlib
 
 
-### EC2 - ???
-Configure AWS user
- - "aws configure" command
+### EC2 - Setup IAM User Config
+Run this command to setup the IAM user configuration:
+```
+aws configure
+```
+	
+The terminal should output the following (line by line):  
+```
+AWS Access Key ID [None]: <ACCESS_KEY>  
+AWS Secret Access Key [None]: <SECRET_ACCESS_KEY>  
+Default region name [None]: us-east-1  
+Default output format [None]: <ENTER>  
+```
+(Use the access_key and secret_key from `ec2.user` that was downloaded in the IAM section)
 
+### EC2 - Setup and Run Online Training
+Copy the `ec2-model-processing.py` file into the EC2 server.  
 
+Run:  
+```
+python3 ec2-model-processing.py
+```
+(This function will continue to run infinitely. Press "Ctrl + C" to stop the function from the server's terminal)
