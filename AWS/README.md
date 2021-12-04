@@ -1,6 +1,6 @@
 # AWS
 ## Overview:
-This project documents how to setup and configure all of the required AWS resources
+This project documents how to install, configure, and utilize all AWS resources for the CAN Bus project
 
 ---
 
